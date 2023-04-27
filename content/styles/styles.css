@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FDFDFD;
+  font-family: "EB Garamond", serif;
+}
+
+h1 {
+  font-family: "Pinyon Script", "EB Garamond", serif;
+  color: #8C1B24;
+  font-size: 4em;
+  margin-top: 0;
+}
+
+h2 {
+  font-family: "Pinyon Script", "EB Garamond", serif;
+  color: #8C1B24;
+  font-size: 2em;
+}
+
+header {
+  background-image: url("../images/background.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: 75%;
+  height: 480px;
+  width: 100vw;
+}
+
+header div.top {
+  padding: 30px 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+header div.top nav {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+header div.top nav ul {
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  justify-items: flex-end;
+}
+
+header div.top nav ul li {
+  display: inline;
+}
+
+header div.top nav ul li a {
+  display: inline-block;
+  width: 175px;
+  height: 35px;
+  background: #8C1B24;
+  text-align: center;
+  color: #FDFDFD;
+  text-decoration: none;
+  vertical-align: center;
+  font-size: 1.25em;
+  border-radius: 20px;
+  padding-top: calc((35px - 1.25em)/2);
+}
+/*# sourceMappingURL=styles.css.map */
