@@ -1,5 +1,6 @@
 // COLORS
 $bordeaux: #8C1B24;
+$bordeaux2: #7e131c;
 $background: #FDFDFD;
 $foreground: #333333;
 
@@ -15,18 +16,24 @@ h1 {
     color: $bordeaux;
     font-size: 4em;
     margin-top: 0;
+    font-weight: 400;
 }
 
 h2 {
     font-family: "Pinyon Script", "EB Garamond", serif;
     color: $bordeaux;
     font-size: 2em;
+    text-align: center;
+    margin: 60px 0;
+    font-weight: 400;
 }
 
 
 
 header {
     background-image: url('../images/background.jpg');
+    background-color: #ffffff4d;
+    background-blend-mode: color-burn;
     background-size: cover;
     background-repeat: no-repeat;
     background-position-y: 75%;
@@ -53,7 +60,7 @@ header {
 
                 li {
                     display: inline;
-                    // margin: 17.5px;
+                    
                     
                     a {
                         display: inline-block;
@@ -67,9 +74,118 @@ header {
                         font-size: 1.25em;
                         border-radius: 20px;
                         padding-top: calc((35px - 1.25em)/2);
+                        transition: background-color .2s ease;
+
+                        &:hover {
+                            background-color: $bordeaux2;
+
+                        }
                     }
                 }
             }
         }
+    }
+
+    blockquote {
+        font-size: 1.875em;
+        color: $foreground;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 600px;
+        margin: auto;
+        
+        cite {
+            font-family: "Pinyon Script", "EB Garamond", serif;
+        }
+    }
+}
+
+
+
+.philo_container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 200px;
+
+    row-gap: 50px;
+
+    .philo_card {
+        width: 600px;
+        text-align: justify;
+        font-size: 1.4em;
+    }
+
+    .philo_card2, .philo_card4 {
+        align-self: flex-end;
+    }
+
+    .philo_card1, .philo_card3 {
+        align-self: flex-start;
+    }
+}
+
+
+.menu_container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 100px 70px;
+    width: calc(100vw - 400px);
+    margin: auto;
+    
+    .card {
+        flex-shrink: 0;
+        width: 300px;
+        height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: background .2s ease;
+        
+        &::before {
+            content: 'lorem ipsum';
+            display: block;
+            background-color: #3333338c;
+            background-blend-mode: color-burn;
+            
+            position: relative;
+            width: inherit;
+            height:inherit;
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+    }
+
+    .card1 {
+        background-image: url('../images/1.jpg');
+    }
+    .card2 {
+        background-image: url('../images/2.jpg');
+    }
+    .card3 {
+        background-image: url('../images/3.jpg');
+    }
+    .card4 {
+        background-image: url('../images/4.jpg');
+    }
+    .card5 {
+        background-image: url('../images/5.jpg');
+    }
+    .card6 {
+        background-image: url('../images/6.jpg');
+    }
+    .card7 {
+        background-image: url('../images/7.jpg');
+    }
+    .card8 {
+        background-image: url('../images/8.jpg');
+    }
+    .card9 {
+        background-image: url('../images/9.jpg');
     }
 }

@@ -10,66 +10,49 @@ h1 {
   color: #8C1B24;
   font-size: 4em;
   margin-top: 0;
+  font-weight: 400;
 }
 
 h2 {
   font-family: "Pinyon Script", "EB Garamond", serif;
   color: #8C1B24;
   font-size: 2em;
+  text-align: center;
+  margin: 60px 0;
+  font-weight: 400;
 }
 
 header {
   background-image: url("../images/background.jpg");
+  background-color: rgba(255, 255, 255, 0.3019607843);
+  background-blend-mode: color-burn;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 75%;
   height: 480px;
   width: 100vw;
 }
-
 header div.top {
   padding: 30px 70px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  flex-direction: row;
+  justify-content: space-between;
 }
-
 header div.top nav {
   width: 100%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
+  justify-content: flex-end;
 }
-
 header div.top nav ul {
   width: 70%;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
   justify-items: flex-end;
 }
-
 header div.top nav ul li {
   display: inline;
 }
-
 header div.top nav ul li a {
   display: inline-block;
   width: 175px;
@@ -81,6 +64,98 @@ header div.top nav ul li a {
   vertical-align: center;
   font-size: 1.25em;
   border-radius: 20px;
-  padding-top: calc((35px - 1.25em)/2);
+  padding-top: calc((35px - 1.25em) / 2);
+  transition: background-color 0.2s ease;
 }
-/*# sourceMappingURL=styles.css.map */
+header div.top nav ul li a:hover {
+  background-color: #7e131c;
+}
+header blockquote {
+  font-size: 1.875em;
+  color: #333333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+}
+header blockquote cite {
+  font-family: "Pinyon Script", "EB Garamond", serif;
+}
+
+.philo_container {
+  display: flex;
+  flex-direction: column;
+  margin: 0 200px;
+  row-gap: 50px;
+}
+.philo_container .philo_card {
+  width: 600px;
+  text-align: justify;
+  font-size: 1.4em;
+}
+.philo_container .philo_card2, .philo_container .philo_card4 {
+  align-self: flex-end;
+}
+.philo_container .philo_card1, .philo_container .philo_card3 {
+  align-self: flex-start;
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 100px 70px;
+  width: calc(100vw - 400px);
+  margin: auto;
+}
+.menu_container .card {
+  flex-shrink: 0;
+  width: 300px;
+  height: 300px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background 0.2s ease;
+}
+.menu_container .card::before {
+  content: "lorem ipsum";
+  display: block;
+  background-color: rgba(51, 51, 51, 0.5490196078);
+  background-blend-mode: color-burn;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.menu_container .card:hover::before {
+  opacity: 1;
+}
+.menu_container .card1 {
+  background-image: url("../images/1.jpg");
+}
+.menu_container .card2 {
+  background-image: url("../images/2.jpg");
+}
+.menu_container .card3 {
+  background-image: url("../images/3.jpg");
+}
+.menu_container .card4 {
+  background-image: url("../images/4.jpg");
+}
+.menu_container .card5 {
+  background-image: url("../images/5.jpg");
+}
+.menu_container .card6 {
+  background-image: url("../images/6.jpg");
+}
+.menu_container .card7 {
+  background-image: url("../images/7.jpg");
+}
+.menu_container .card8 {
+  background-image: url("../images/8.jpg");
+}
+.menu_container .card9 {
+  background-image: url("../images/9.jpg");
+}/*# sourceMappingURL=styles.css.map */
