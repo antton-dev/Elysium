@@ -1,10 +1,11 @@
 // COLORS
 $bordeaux: #8C1B24;
 $bordeaux2: #7e131c;
-$bordeaux3: hsla(355, 68%, 33%, 0.525);
+$bordeaux3: #8d1b2486;
 $background: #FDFDFD;
 $foreground: #232323;
 
+// MAIN CSS
 body {
     margin: 0;
     padding: 0;
@@ -55,6 +56,8 @@ a {
     }
 }
 
+
+// HEADER
 header {
     background-image: url('../images/background.jpg');
     background-color: #ffffff4d;
@@ -127,7 +130,7 @@ header {
 }
 
 
-
+// "NOTRE PHILOSOPHIE" SECTION
 .philo_container {
     display: flex;
     flex-direction: column;
@@ -149,6 +152,7 @@ header {
 }
 
 
+// "NOTRE CARTE" SECTION
 .menu_container {
     display: flex;
     flex-direction: row;
@@ -258,7 +262,7 @@ header {
 }
 
 
-
+// "VENIR NOUS VOIR" SECTION
 .form_container {
     display: flex;
     flex-direction: row;
@@ -330,7 +334,7 @@ header {
 }
 
 
-
+// FOOTER
 footer {
     margin: 70px 0 20px;
     p {
@@ -348,7 +352,7 @@ footer {
 
 
 
-
+// MEDIA QUERIES
 @media screen and (max-width: 900px) {
     .philo_container {
         align-items: center;
