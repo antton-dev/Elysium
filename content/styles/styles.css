@@ -1,8 +1,22 @@
+@charset "UTF-8";
 body {
   margin: 0;
   padding: 0;
   background-color: #FDFDFD;
   font-family: "EB Garamond", serif;
+}
+
+*::-moz-selection {
+  background-color: rgba(141, 27, 36, 0.525);
+}
+
+*::selection {
+  background-color: rgba(141, 27, 36, 0.525);
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
 }
 
 h1 {
@@ -18,41 +32,81 @@ h2 {
   color: #8C1B24;
   font-size: 2em;
   text-align: center;
-  margin: 60px 0;
+  margin-top: 60px;
   font-weight: 400;
+}
+
+p {
+  font-size: 1.4em;
+  text-align: justify;
+  margin: 0;
+}
+
+a {
+  color: #8C1B24;
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+a:hover {
+  border-bottom-color: #8C1B24;
 }
 
 header {
   background-image: url("../images/background.jpg");
-  background-color: rgba(255, 255, 255, 0.3019607843);
+  background-color: #ffffff4d;
   background-blend-mode: color-burn;
   background-size: cover;
   background-repeat: no-repeat;
   background-position-y: 75%;
   height: 480px;
-  width: 100vw;
 }
+
 header div.top {
   padding: 30px 70px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
+
 header div.top nav {
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
+
 header div.top nav ul {
   width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
   justify-items: flex-end;
 }
+
 header div.top nav ul li {
   display: inline;
 }
+
 header div.top nav ul li a {
   display: inline-block;
   width: 175px;
@@ -64,98 +118,318 @@ header div.top nav ul li a {
   vertical-align: center;
   font-size: 1.25em;
   border-radius: 20px;
-  padding-top: calc((35px - 1.25em) / 2);
-  transition: background-color 0.2s ease;
+  padding-top: calc((35px - 1.25em)/2);
+  -webkit-transition: background-color .2s ease;
+  transition: background-color .2s ease;
 }
-header div.top nav ul li a:hover {
+
+header div.top nav ul li a:hover, header div.top nav ul li a:focus {
   background-color: #7e131c;
 }
+
 header blockquote {
   font-size: 1.875em;
-  color: #333333;
+  color: #232323;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   text-align: center;
   max-width: 600px;
   margin: auto;
 }
+
 header blockquote cite {
   font-family: "Pinyon Script", "EB Garamond", serif;
 }
 
 .philo_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  margin: 0 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   row-gap: 50px;
 }
+
 .philo_container .philo_card {
-  width: 600px;
-  text-align: justify;
-  font-size: 1.4em;
+  max-width: 600px;
+  margin: 0 40px;
 }
+
 .philo_container .philo_card2, .philo_container .philo_card4 {
-  align-self: flex-end;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
 }
+
 .philo_container .philo_card1, .philo_container .philo_card3 {
-  align-self: flex-start;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
 }
 
 .menu_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 100px 70px;
-  width: calc(100vw - 400px);
-  margin: auto;
+  padding: 0 10px;
 }
+
 .menu_container .card {
-  flex-shrink: 0;
-  width: 300px;
-  height: 300px;
+  max-width: 300px;
+  max-height: 300px;
+  aspect-ratio: 1/1;
+  background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  transition: background 0.2s ease;
+  -webkit-transition: background .2s ease;
+  transition: background .2s ease;
+  background-blend-mode: soft-light;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
+.menu_container .card:hover {
+  background-color: #000000a7;
+}
+
 .menu_container .card::before {
-  content: "lorem ipsum";
   display: block;
-  background-color: rgba(51, 51, 51, 0.5490196078);
-  background-blend-mode: color-burn;
+  opacity: 0;
+  color: #FDFDFD;
+  text-align: center;
   position: relative;
   width: inherit;
-  height: inherit;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  font-size: 1.125em;
+  margin: 0 25px;
+  font-variant: small-caps;
+  -webkit-transition: opacity .5s ease;
+  transition: opacity .5s ease;
 }
+
 .menu_container .card:hover::before {
   opacity: 1;
 }
+
 .menu_container .card1 {
   background-image: url("../images/1.jpg");
 }
+
+.menu_container .card1::before {
+  content: "Tartare de thon mariné aux agrumes et gingembre, accompagné de ses chips de patate douce croustillantes";
+}
+
 .menu_container .card2 {
   background-image: url("../images/2.jpg");
 }
+
+.menu_container .card2::before {
+  content: "Velouté de potiron parfumée à la truffe noire, servie avec une mouillette de pain grillé";
+}
+
 .menu_container .card3 {
   background-image: url("../images/3.jpg");
 }
+
+.menu_container .card3::before {
+  content: "Foie gras poêlé aux fruits rouges, vinaigre balsamique, accompagné de sa  brioche maison";
+}
+
 .menu_container .card4 {
   background-image: url("../images/4.jpg");
 }
+
+.menu_container .card4::before {
+  content: "Filet de boeuf wagyu grillé, sauce au poivre vert, accompagné de pommes de terre grenaille rôties et légumes de saison";
+}
+
 .menu_container .card5 {
   background-image: url("../images/5.jpg");
 }
+
+.menu_container .card5::before {
+  content: "Risotto crémeux aux cèpes et parmesan, agrémenté d'un oeuf poché";
+}
+
 .menu_container .card6 {
   background-image: url("../images/6.jpg");
 }
+
+.menu_container .card6::before {
+  content: "Filet de cabillaud rôti, purée de carottes au cumin et émulsion de fenouil";
+}
+
 .menu_container .card7 {
   background-image: url("../images/7.jpg");
 }
+
+.menu_container .card7::before {
+  content: "Fondant au chocolat noir et coeur coulant à la framboise, glace à la vanille Bourbon";
+}
+
 .menu_container .card8 {
   background-image: url("../images/8.jpg");
 }
+
+.menu_container .card8::before {
+  content: "Tarte fine aux pommes, crème légère à la cannelle et caramel au beurre salé";
+}
+
 .menu_container .card9 {
   background-image: url("../images/9.jpg");
-}/*# sourceMappingURL=styles.css.map */
+}
+
+.menu_container .card9::before {
+  content: "Assortiment de fromages affinés, accompagné de pain aux noix et figues confites";
+}
+
+.form_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.form_container .left, .form_container .right {
+  margin-top: 70px;
+  min-width: 500px;
+  width: 50%;
+}
+
+.form_container .left h3 {
+  margin: 0;
+  font-size: 1.4em;
+}
+
+.form_container .left h3:nth-child(3), .form_container .left h3:nth-child(5) {
+  margin-top: 25px;
+}
+
+.form_container .left ul {
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  font-size: 1.4em;
+}
+
+.form_container .right form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 15px;
+}
+
+.form_container .right form input, .form_container .right form button {
+  height: 50px;
+  font-size: 1.4em;
+  font-family: inherit;
+  padding-left: 15px;
+  border: 2px solid #8C1B24;
+  background-color: transparent;
+  -webkit-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
+.form_container .right form button {
+  color: #8C1B24;
+}
+
+.form_container .right form button:hover {
+  background-color: #8C1B24;
+  color: #FDFDFD;
+  cursor: pointer;
+}
+
+.form_container .right form textarea {
+  min-height: 260px;
+  font-size: 1.4em;
+  font-family: inherit;
+  padding-left: 15px;
+  border: 2px solid #8C1B24;
+}
+
+footer {
+  margin: 70px 0 20px;
+}
+
+footer p {
+  text-align: center;
+}
+
+footer p.rp_footer {
+  font-family: "Pinyon Script", "EB Garamond", serif;
+}
+
+footer p.challenge_footer {
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 900px) {
+  .philo_container {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .philo_container .philo_card {
+    -ms-flex-item-align: auto;
+        -ms-grid-row-align: auto;
+        align-self: auto;
+  }
+  header .top nav {
+    display: none !important;
+  }
+  header .top {
+    -webkit-box-pack: center !important;
+        -ms-flex-pack: center !important;
+            justify-content: center !important;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .right, .left {
+    min-width: 0 !important;
+    width: 90% !important;
+  }
+  p.contact_intro {
+    margin: 0 15px;
+  }
+  form {
+    width: 90% !important;
+    margin: auto;
+  }
+}
+/*# sourceMappingURL=styles.css.map */

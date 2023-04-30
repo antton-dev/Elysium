@@ -1,14 +1,24 @@
 // COLORS
 $bordeaux: #8C1B24;
 $bordeaux2: #7e131c;
+$bordeaux3: hsla(355, 68%, 33%, 0.525);
 $background: #FDFDFD;
-$foreground: #333333;
+$foreground: #232323;
 
 body {
     margin: 0;
     padding: 0;
     background-color: $background;
     font-family: "EB Garamond", serif;
+}
+
+*::selection {
+    background-color: $bordeaux3;
+}
+
+main {
+    max-width: 1100px;
+    margin: auto;
 }
 
 h1 {
@@ -24,11 +34,26 @@ h2 {
     color: $bordeaux;
     font-size: 2em;
     text-align: center;
-    margin: 60px 0;
+    margin-top: 60px;
     font-weight: 400;
 }
 
+p {
+    font-size: 1.4em;
+    text-align: justify;
+    margin: 0;
+}
 
+a {
+    color: $bordeaux;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: all .3s ease;
+
+    &:hover {
+        border-bottom-color: $bordeaux;
+    }
+}
 
 header {
     background-image: url('../images/background.jpg');
@@ -38,10 +63,9 @@ header {
     background-repeat: no-repeat;
     background-position-y: 75%;
     height: 480px;
-    width: 100vw;
 
     div.top {
-        padding: 30px 70px; 
+        padding: 30px 70px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -76,7 +100,7 @@ header {
                         padding-top: calc((35px - 1.25em)/2);
                         transition: background-color .2s ease;
 
-                        &:hover {
+                        &:hover, &:focus {
                             background-color: $bordeaux2;
 
                         }
@@ -107,14 +131,12 @@ header {
 .philo_container {
     display: flex;
     flex-direction: column;
-    margin: 0 200px;
 
     row-gap: 50px;
 
     .philo_card {
-        width: 600px;
-        text-align: justify;
-        font-size: 1.4em;
+        max-width: 600px;
+        margin: 0 40px;
     }
 
     .philo_card2, .philo_card4 {
@@ -130,30 +152,39 @@ header {
 .menu_container {
     display: flex;
     flex-direction: row;
+    justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 100px 70px;
-    width: calc(100vw - 400px);
-    margin: auto;
+    padding: 0 10px;
     
     .card {
-        flex-shrink: 0;
-        width: 300px;
-        height: 300px;
+        max-width: 300px;
+        max-height: 300px;
+        aspect-ratio: 1/1;
+        background-color: transparent;
         background-size: contain;
         background-repeat: no-repeat;
         transition: background .2s ease;
-        
+        background-blend-mode: soft-light;
+        transition: all .5s ease;
+        display: flex;
+        align-items: center;
+
+        &:hover {
+            background-color: #000000a7;
+        }
+
         &::before {
-            content: 'lorem ipsum';
             display: block;
-            background-color: #3333338c;
-            background-blend-mode: color-burn;
-            
+            opacity: 0;
+            color: $background;
+            text-align: center;
             position: relative;
             width: inherit;
-            height:inherit;
-            opacity: 0;
-            transition: opacity .2s ease;
+            font-size: 1.125em;
+            margin: 0 25px;
+            font-variant: small-caps;
+            transition: opacity .5s ease;
         }
 
         &:hover::before {
@@ -163,29 +194,192 @@ header {
 
     .card1 {
         background-image: url('../images/1.jpg');
+
+        &::before {
+            content: "Tartare de thon mariné aux agrumes et gingembre, accompagné de ses chips de patate douce croustillantes";
+        }
     }
     .card2 {
         background-image: url('../images/2.jpg');
+        
+        &::before {
+            content: "Velouté de potiron parfumée à la truffe noire, servie avec une mouillette de pain grillé";
+        }
     }
     .card3 {
         background-image: url('../images/3.jpg');
+        
+        &::before {
+            content: "Foie gras poêlé aux fruits rouges, vinaigre balsamique, accompagné de sa  brioche maison";
+        }
     }
     .card4 {
         background-image: url('../images/4.jpg');
+        
+        &::before {
+            content: "Filet de boeuf wagyu grillé, sauce au poivre vert, accompagné de pommes de terre grenaille rôties et légumes de saison";
+        }
     }
     .card5 {
         background-image: url('../images/5.jpg');
+        
+        &::before {
+            content: "Risotto crémeux aux cèpes et parmesan, agrémenté d'un oeuf poché";
+        }
     }
     .card6 {
         background-image: url('../images/6.jpg');
+        
+        &::before {
+            content: "Filet de cabillaud rôti, purée de carottes au cumin et émulsion de fenouil";
+        }
     }
     .card7 {
         background-image: url('../images/7.jpg');
+        
+        &::before {
+            content: "Fondant au chocolat noir et coeur coulant à la framboise, glace à la vanille Bourbon";
+        }
     }
     .card8 {
         background-image: url('../images/8.jpg');
+        
+        &::before {
+            content: "Tarte fine aux pommes, crème légère à la cannelle et caramel au beurre salé";
+        }
     }
     .card9 {
         background-image: url('../images/9.jpg');
+        
+        &::before {
+            content: "Assortiment de fromages affinés, accompagné de pain aux noix et figues confites";
+        }
+    }
+}
+
+
+
+.form_container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    .left, .right {
+        margin-top: 70px;
+        min-width: 500px;
+        width: 50%;
+    }
+
+    .left {
+
+        
+        h3 {
+            margin: 0;
+            font-size: 1.4em;
+
+            &:nth-child(3), &:nth-child(5) {
+                margin-top: 25px;
+            }
+        }
+        
+        ul {
+            margin: 0;
+            list-style-type: none;
+            padding: 0;
+            font-size: 1.4em;
+        }
+    }
+
+    .right {
+        form {
+            display: flex;
+            flex-direction: column;
+            row-gap: 15px;
+            
+            input, button {
+                height: 50px;
+                font-size: 1.4em;
+                font-family: inherit;
+                padding-left: 15px;
+                border: 2px solid $bordeaux;
+                background-color: transparent;
+                transition: all .3s ease;
+            }
+
+            button {
+                color: $bordeaux;
+                
+                &:hover {
+                    background-color: $bordeaux;
+                    color: $background;
+                    cursor: pointer;
+                }
+            }
+
+
+            textarea {
+                min-height: 260px;
+                font-size: 1.4em;
+                font-family: inherit;
+                padding-left: 15px;
+                border: 2px solid $bordeaux;
+            }
+        }
+    }
+}
+
+
+
+footer {
+    margin: 70px 0 20px;
+    p {
+        text-align: center;
+    }
+
+    p.rp_footer {
+        font-family: "Pinyon Script", "EB Garamond", serif;
+    }
+
+    p.challenge_footer {
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+@media screen and (max-width: 900px) {
+    .philo_container {
+        align-items: center;
+        
+        .philo_card {
+            align-self: auto;
+        }
+    }
+
+    header .top nav {
+        display: none !important;
+    }
+
+    header .top {
+        justify-content: center !important;
+    }
+}
+
+
+@media screen and (max-width:600px) {
+    .right, .left {
+        min-width: 0 !important;
+        width: 90% !important;
+    }
+
+    p.contact_intro {
+        margin: 0 15px;
+    }
+
+    form {
+        width: 90% !important;
+        margin: auto;
     }
 }
